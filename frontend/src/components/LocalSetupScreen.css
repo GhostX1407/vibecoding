@@ -1,0 +1,108 @@
+.lsetup {
+  position: relative; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow-y: auto; background: var(--bg-0);
+}
+.lsetup-bg {
+  position: fixed; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 20% 80%, rgba(46,184,122,0.07) 0%, transparent 50%);
+}
+.lsetup-wrap {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 500px;
+  padding: 40px 24px;
+  display: flex; flex-direction: column; gap: 22px;
+  animation: fadeUp 0.45s ease;
+}
+.lsetup-back {
+  align-self: flex-start;
+  background: var(--bg-1); border: 1px solid var(--border-mid);
+  border-radius: var(--r-sm); padding: 7px 14px;
+  font-size: 13px; font-weight: 500; color: var(--ink-2);
+  cursor: pointer; transition: all 0.15s;
+}
+.lsetup-back:hover { border-color: var(--p3); color: var(--p3); }
+
+.lsetup-header { display: flex; flex-direction: column; gap: 8px; }
+.lsetup-mode-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; background: var(--p3-bg);
+  border: 1px solid rgba(46,184,122,0.2);
+  border-radius: 100px; font-size: 12px; font-weight: 600;
+  color: var(--p3); width: fit-content;
+}
+.lsetup-title { font-size: 24px; font-weight: 700; color: var(--ink-0); letter-spacing: -0.4px; }
+.lsetup-sub { font-size: 14px; color: var(--ink-3); line-height: 1.6; }
+
+/* Sections */
+.lsetup-section { display: flex; flex-direction: column; gap: 10px; }
+.lsetup-section-label {
+  font-size: 11px; font-weight: 600; color: var(--ink-3);
+  letter-spacing: 0.8px; text-transform: uppercase;
+}
+
+/* Count buttons */
+.lsetup-count-row { display: flex; gap: 8px; }
+.lsetup-count-btn {
+  flex: 1; padding: 10px;
+  background: var(--bg-1); border: 1.5px solid var(--border-soft);
+  border-radius: var(--r-md);
+  font-size: 14px; font-weight: 500; color: var(--ink-2);
+  cursor: pointer; transition: all 0.18s;
+}
+.lsetup-count-btn--on {
+  background: var(--p3-bg); border-color: var(--p3);
+  color: var(--p3); font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(46,184,122,0.10);
+}
+.lsetup-count-btn:hover:not(.lsetup-count-btn--on) { border-color: var(--border-hard); }
+
+/* Player inputs */
+.lsetup-players { display: flex; flex-direction: column; gap: 10px; }
+.lsetup-player {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-0); border: 1.5px solid var(--border-soft);
+  border-radius: var(--r-md); box-shadow: var(--shadow-sm);
+  animation: slideRight 0.3s ease;
+  border-left: 3px solid var(--c, var(--border-soft));
+}
+.lsetup-sym {
+  width: 40px; height: 40px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg, var(--bg-2)); border-radius: var(--r-sm);
+  font-size: 18px; font-weight: 700; color: var(--c, var(--ink-3));
+}
+.lsetup-player-right { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.lsetup-player-label { font-size: 10px; font-weight: 600; color: var(--c, var(--ink-3)); letter-spacing: 0.8px; text-transform: uppercase; }
+.lsetup-name-input {
+  width: 100%; padding: 8px 10px;
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  border-radius: var(--r-sm);
+  font-size: 14px; color: var(--ink-0);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.lsetup-name-input::placeholder { color: var(--ink-4); }
+.lsetup-name-input:focus { border-color: var(--c, var(--p3)); box-shadow: 0 0 0 2px color-mix(in srgb, var(--c, var(--p3)) 12%, transparent); outline: none; }
+
+/* Start */
+.lsetup-start-btn {
+  padding: 14px;
+  background: var(--p3); color: #fff;
+  border-radius: var(--r-md);
+  font-size: 15px; font-weight: 600;
+  box-shadow: 0 2px 10px rgba(46,184,122,0.28);
+  transition: all 0.18s; cursor: pointer;
+}
+.lsetup-start-btn:hover { background: #25a56d; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(46,184,122,0.36); }
+
+/* Rules */
+.lsetup-rules {
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  border-radius: var(--r-md); padding: 16px 20px;
+}
+.lsetup-rules-title { font-size: 11px; font-weight: 600; color: var(--ink-3); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.lsetup-rules-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lsetup-rules-list li { font-size: 13px; color: var(--ink-2); padding-left: 16px; position: relative; line-height: 1.5; }
+.lsetup-rules-list li::before { content: '→'; position: absolute; left: 0; color: var(--p3); font-size: 11px; top: 2px; }
+.lsetup-rules-list strong { color: var(--ink-0); font-weight: 600; }

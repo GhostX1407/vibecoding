@@ -1,0 +1,114 @@
+.go {
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow-y: auto;
+  background: var(--bg-0);
+  opacity: 0; transition: opacity 0.45s ease;
+}
+.go--vis { opacity: 1; }
+
+.go-bg {
+  position: fixed; inset: 0; pointer-events: none;
+}
+
+.go-wrap {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 480px;
+  padding: 40px 24px;
+  display: flex; flex-direction: column; gap: 20px;
+  animation: fadeUp 0.55s ease;
+}
+
+/* Hero */
+.go-hero {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 32px 24px;
+  background: var(--bg-0);
+  border: 1.5px solid color-mix(in srgb, var(--c) 25%, var(--border-soft));
+  border-radius: var(--r-xl);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--c) 10%, transparent), var(--shadow-lg);
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+
+.go-trophy-ring {
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--c) 15%, transparent);
+  top: -60px; left: 50%; transform: translateX(-50%);
+  animation: ripple 3s ease-out infinite;
+}
+
+.go-trophy { font-size: 60px; animation: bounce 2s ease-in-out infinite; }
+
+.go-hero-text { display: flex; flex-direction: column; gap: 6px; }
+
+.go-title {
+  font-size: 36px; font-weight: 700; letter-spacing: -1px; color: var(--ink-0);
+}
+.go-title--win {
+  background: linear-gradient(135deg, var(--gold) 0%, #e8900a 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.go-sub { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+
+/* Stats */
+.go-stats {
+  display: flex; gap: 12px;
+}
+.go-stat {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 16px 12px;
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  border-radius: var(--r-md); box-shadow: var(--shadow-sm);
+}
+.go-stat-v { font-size: 26px; font-weight: 700; font-family: var(--mono); color: var(--ink-0); }
+.go-stat-l { font-size: 11px; color: var(--ink-3); font-weight: 500; }
+
+/* Section */
+.go-section { display: flex; flex-direction: column; gap: 10px; }
+.go-section-title { font-size: 11px; font-weight: 600; color: var(--ink-3); letter-spacing: 1px; text-transform: uppercase; }
+
+.go-rankings {
+  background: var(--bg-0); border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.go-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-bottom: 1px solid var(--border-soft);
+  transition: background 0.15s;
+}
+.go-row:last-child { border-bottom: none; }
+.go-row--win { background: var(--bg); }
+
+.go-medal { font-size: 18px; width: 28px; text-align: center; }
+.go-row-sym { font-size: 16px; color: var(--c); width: 22px; text-align: center; font-weight: 700; }
+.go-row-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--ink-0); }
+.go-row-elo { font-size: 12px; font-family: var(--mono); color: var(--ink-3); }
+.go-winner-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  padding: 2px 7px; border-radius: 100px;
+  background: var(--bg); color: var(--c);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+}
+
+/* Actions */
+.go-actions { display: flex; gap: 12px; }
+.go-btn {
+  flex: 1; padding: 13px; border-radius: var(--r-md);
+  font-size: 14px; font-weight: 600; transition: all 0.18s; cursor: pointer;
+}
+.go-btn--home {
+  background: var(--bg-1); color: var(--ink-1);
+  border: 1.5px solid var(--border-mid);
+}
+.go-btn--home:hover { border-color: var(--ink-2); background: var(--bg-2); }
+.go-btn--lb {
+  background: var(--gold); color: #fff;
+  box-shadow: 0 2px 8px rgba(212,160,23,0.30);
+}
+.go-btn--lb:hover { background: #c49010; transform: translateY(-1px); }

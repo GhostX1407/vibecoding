@@ -1,0 +1,99 @@
+.lgo {
+  position: relative; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow-y: auto; background: var(--bg-0);
+  opacity: 0; transition: opacity 0.45s ease;
+}
+.lgo--vis { opacity: 1; }
+
+.lgo-bg { position: fixed; inset: 0; pointer-events: none; }
+
+.lgo-wrap {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 480px;
+  padding: 40px 24px;
+  display: flex; flex-direction: column; gap: 18px;
+  animation: fadeUp 0.55s ease;
+}
+
+/* Hero */
+.lgo-hero {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 28px 20px;
+  background: var(--bg-0);
+  border: 1.5px solid color-mix(in srgb, var(--c, var(--border-mid)) 30%, var(--border-soft));
+  border-radius: var(--r-xl);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--c, transparent) 8%, transparent), var(--shadow-lg);
+  text-align: center; position: relative; overflow: hidden;
+}
+.lgo-ring {
+  position: absolute; width: 180px; height: 180px; border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--c, var(--border-soft)) 15%, transparent);
+  top: -60px; left: 50%; transform: translateX(-50%);
+  animation: ripple 3s ease-out infinite;
+}
+.lgo-trophy { font-size: 52px; animation: bounce 2s ease-in-out infinite; }
+.lgo-title { font-size: 32px; font-weight: 700; letter-spacing: -0.8px; }
+.lgo-sub { font-size: 14px; color: var(--ink-3); }
+
+/* Stats */
+.lgo-stats { display: flex; gap: 10px; }
+.lgo-stat {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 14px 10px;
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  border-radius: var(--r-md); box-shadow: var(--shadow-sm);
+}
+.lgo-stat-v { font-size: 24px; font-weight: 700; font-family: var(--mono); color: var(--ink-0); }
+.lgo-stat-l { font-size: 11px; color: var(--ink-3); font-weight: 500; }
+
+/* Section */
+.lgo-section { display: flex; flex-direction: column; gap: 8px; }
+.lgo-section-label { font-size: 11px; font-weight: 600; color: var(--ink-3); letter-spacing: 0.8px; text-transform: uppercase; }
+
+.lgo-ranks {
+  background: var(--bg-0); border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.lgo-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 16px; border-bottom: 1px solid var(--border-soft);
+  transition: background 0.15s;
+}
+.lgo-row:last-child { border-bottom: none; }
+.lgo-row--win { background: var(--bg); }
+
+.lgo-medal { font-size: 16px; width: 26px; text-align: center; }
+.lgo-rsym { font-size: 16px; color: var(--c); width: 22px; text-align: center; font-weight: 700; }
+.lgo-rname { flex: 1; font-size: 14px; font-weight: 600; color: var(--ink-0); }
+.lgo-winner-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  padding: 2px 7px; border-radius: 100px;
+  background: var(--bg); color: var(--c);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+}
+.lgo-row-stats { font-size: 11px; font-family: var(--mono); color: var(--ink-3); }
+
+/* Actions */
+.lgo-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.lgo-btn {
+  flex: 1; min-width: 120px; padding: 12px;
+  border-radius: var(--r-md);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all 0.18s;
+}
+.lgo-btn--again {
+  background: var(--p3); color: #fff;
+  box-shadow: 0 2px 8px rgba(46,184,122,0.28);
+}
+.lgo-btn--again:hover { background: #25a56d; transform: translateY(-1px); }
+.lgo-btn--setup {
+  background: var(--bg-1); color: var(--ink-1);
+  border: 1.5px solid var(--border-mid);
+}
+.lgo-btn--setup:hover { border-color: var(--p4); color: var(--p4); }
+.lgo-btn--home {
+  background: var(--bg-1); color: var(--ink-1);
+  border: 1.5px solid var(--border-mid);
+}
+.lgo-btn--home:hover { border-color: var(--ink-2); }

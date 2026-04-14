@@ -1,0 +1,129 @@
+/* ── Warm Earthy × Electric Ink Design System ── */
+:root {
+  /* Base surfaces - warm mid-tones, not black, not white */
+  --bg-0: #f0ebe3;        /* page bg - warm cream */
+  --bg-1: #e8e0d4;        /* slightly deeper cream */
+  --bg-2: #ddd5c7;        /* card backgrounds */
+  --bg-3: #d0c8b8;        /* pressed / deeper surfaces */
+
+  /* Ink layer - deep warm navy, replaces pure black */
+  --ink-0: #1c1f2e;       /* darkest - headings */
+  --ink-1: #2d3348;       /* primary text */
+  --ink-2: #4a5068;       /* secondary text */
+  --ink-3: #7a8099;       /* muted text */
+  --ink-4: #a8afc4;       /* placeholder */
+
+  /* Borders */
+  --border-soft: rgba(28, 31, 46, 0.10);
+  --border-mid:  rgba(28, 31, 46, 0.18);
+  --border-hard: rgba(28, 31, 46, 0.30);
+
+  /* Player accent palette - electric + earthy */
+  --p1: #e85d3a;          /* terra cotta / electric coral */
+  --p1-bg: rgba(232, 93, 58, 0.12);
+  --p1-glow: 0 0 18px rgba(232, 93, 58, 0.35);
+
+  --p2: #3a7de8;          /* electric cobalt */
+  --p2-bg: rgba(58, 125, 232, 0.12);
+  --p2-glow: 0 0 18px rgba(58, 125, 232, 0.35);
+
+  --p3: #2eb87a;          /* forest electric green */
+  --p3-bg: rgba(46, 184, 122, 0.12);
+  --p3-glow: 0 0 18px rgba(46, 184, 122, 0.35);
+
+  --p4: #9b5de5;          /* electric violet */
+  --p4-bg: rgba(155, 93, 229, 0.12);
+  --p4-glow: 0 0 18px rgba(155, 93, 229, 0.35);
+
+  /* Special */
+  --gold: #d4a017;
+  --gold-bg: rgba(212, 160, 23, 0.12);
+  --success: #2eb87a;
+  --danger: #e85d3a;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  /* Fonts */
+  --font: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', 'Courier New', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(28,31,46,0.08), 0 1px 2px rgba(28,31,46,0.06);
+  --shadow-md: 0 4px 12px rgba(28,31,46,0.10), 0 2px 4px rgba(28,31,46,0.06);
+  --shadow-lg: 0 8px 24px rgba(28,31,46,0.12), 0 4px 8px rgba(28,31,46,0.08);
+  --shadow-xl: 0 20px 48px rgba(28,31,46,0.14), 0 8px 16px rgba(28,31,46,0.08);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background: var(--bg-0);
+  color: var(--ink-1);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { width: 100%; height: 100%; }
+
+button {
+  cursor: pointer; font-family: var(--font);
+  border: none; outline: none;
+  transition: all 0.18s ease;
+}
+
+input {
+  font-family: var(--font); outline: none; border: none;
+  background: transparent;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--border-hard); border-radius: 10px; }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes winPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
